@@ -69,4 +69,38 @@ function startQuiz() {
 
 function showQuestion() {
     if (currentQuestion < questions.length) {
-        document.getElementById("question").innerText = questions[currentQuestion].question
+        document.getElementById("question").innerText = questions[currentQuestion].question;
+        document.getElementById("option1").innerText = questions[currentQuestion].options[0];
+        document.getElementById("option2").innerText = questions[currentQuestion].options[1];
+        document.getElementById("option3").innerText = questions[currentQuestion].options[2];
+
+        document.getElementById("option1").onclick = checkAnswer;
+        document.getElementById("option2").onclick = checkAnswer;
+        document.getElementById("option3").onclick = checkAnswer;
+
+        resetColors();
+    } else {
+        document.getElementById("question").innerText = "Grattis! Du har slutfört quizet!";
+        document.getElementById("option1").style.display = "none";
+        document.getElementById("option2").style.display = "none";
+        document.getElementById("option3").style.display = "none";
+    }
+}
+
+function checkAnswer(event) {
+    if (event.target.innerText === questions[currentQuestion].answer) {
+        event.target.style.backgroundColor = "lightgreen"; // Rätt svar blir grönt
+        setTimeout(() => {
+            currentQuestion++;
+            showQuestion();
+        }, 1000); // Går till nästa fråga efter 1 sekund
+    } else {
+        event.target.style.backgroundColor = "lightcoral"; // Fel svar blir rött
+    }
+}
+
+function resetColors() {
+    document.getElementById("option1").style.backgroundColor = "";
+    document.getElementById("option2").style.backgroundColor = "";
+    document.getElementById("option3").style.backgroundColor = "";
+}
