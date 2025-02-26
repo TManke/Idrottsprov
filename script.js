@@ -10,14 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
     window.showSection = showSection;
     showSection("quiz-section"); // Visa quiz som standard
 
-    // Quiz med 300 frågor (flervalsfrågor)
+    // Quiz med 30 frågor (flervalsfrågor)
     const questions = [
         { question: "Vad är hjärtats huvudsakliga funktion?", options: ["Att pumpa blod", "Att producera syre", "Att bryta ner mat"], answer: "Att pumpa blod" },
         { question: "Vilken del av kroppen ansvarar för gasutbyte?", options: ["Hjärtat", "Lungorna", "Levern"], answer: "Lungorna" },
         { question: "Vad heter det största blodkärlet i kroppen?", options: ["Vena cava", "Aortan", "Kapillärer"], answer: "Aortan" },
         { question: "Vilket organ filtrerar blodet?", options: ["Magsäcken", "Njurar", "Lungorna"], answer: "Njurar" },
         { question: "Vad kallas de minsta blodkärlen?", options: ["Artärer", "Vener", "Kapillärer"], answer: "Kapillärer" },
-        { question: "Vilken del av hjärnan styr balans?", options: ["Lillhjärnan", "Storhjärnan", "Hjärnstammen"], answer: "Lillhjärnan" },
+        { question: "Vilken del av hjärnan styr balans?", options: ["Lillhjärnan", "Storhjärnan", "Hjärnstammen"], answer: "Lillhjärnan" }
     ];
     
     const quizContainer = document.getElementById("quiz-container");
@@ -38,10 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function checkAnswer(button, correctAnswer) {
+        document.querySelectorAll("button").forEach(btn => btn.style.backgroundColor = "");
         if (button.textContent === correctAnswer) {
-            button.style.backgroundColor = "green";
+            button.style.backgroundColor = "lightgreen";
         } else {
-            button.style.backgroundColor = "red";
+            button.style.backgroundColor = "lightcoral";
         }
     }
 
