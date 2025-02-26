@@ -7,16 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Välkommen till övningar!</h1>
-    <p>Klicka på knappen för att starta ett quiz:</p>
-    <button onclick="startQuiz()">Starta Quiz</button>
-    <p id="question"></p>
-    <button id="option1"></button>
-    <button id="option2"></button>
-    <button id="option3"></button>
+    <button id="quiz-btn">Starta Quiz</button>
+    <button id="image-quiz-btn">Bildquiz</button>
+    <button id="drag-drop-btn">Drag & Släpp</button>
 
-    <a href="flashcards.html"><button>Öva med Flashcards</button></a>
+    <div id="quiz-section">
+        <h2>Quiz</h2>
+        <div id="quiz-container"></div>
+    </div>
+
+    <div id="image-quiz-section">
+        <h2>Bildquiz</h2>
+        <div id="image-quiz-container"></div>
+    </div>
+
+    <div id="drag-drop-section">
+        <h2>Drag & Släpp</h2>
+        <div class="drop-zone">Släpp här</div>
+        <div class="drag-item" id="drag1" draggable="true">Hjärtat</div>
+        <div class="drag-item" id="drag2" draggable="true">Lungorna</div>
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
