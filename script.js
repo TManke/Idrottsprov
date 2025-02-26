@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.showSection = showSection;
     showSection("quiz-section"); // Visa quiz som standard
 
-    // Quiz med 30 frågor (flervalsfrågor)
+// Quiz med 30 frågor (flervalsfrågor)
     const questions = [
         { question: "Vad är hjärtats huvudsakliga funktion?", options: ["Att pumpa blod", "Att producera syre", "Att bryta ner mat"], answer: "Att pumpa blod" },
         { question: "Vilken del av kroppen ansvarar för gasutbyte?", options: ["Hjärtat", "Lungorna", "Levern"], answer: "Lungorna" },
@@ -64,11 +64,10 @@ document.addEventListener("DOMContentLoaded", function () {
         quizContainer.appendChild(questionEl);
         quizContainer.appendChild(nextButton);
         nextButton.style.display = "none";
-        nextButton.disabled = false; // Återaktivera nästa-knappen
     }
 
     function checkAnswer(button, correctAnswer) {
-        document.querySelectorAll("button").forEach(btn => btn.disabled = true);
+        document.querySelectorAll("#quiz-container button").forEach(btn => btn.disabled = true);
         if (button.textContent === correctAnswer) {
             button.style.backgroundColor = "lightgreen";
         } else {
