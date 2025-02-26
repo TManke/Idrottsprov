@@ -4,15 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashcards</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .flashcard { 
+            width: 300px; 
+            height: 200px; 
+            border: 1px solid black; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            cursor: pointer; 
+            margin: 20px auto; 
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Flashcards</h1>
-    <div id="flashcard">
-        <p id="term"></p>
-    </div>
-    <button onclick="showDefinition()">Visa definition</button>
+    
+    <div id="flashcard" class="flashcard" onclick="flipCard()">Klicka för att se svaret</div>
     <button onclick="nextCard()">Nästa kort</button>
+    <br><br>
+    <a href="index.html">Tillbaka till startsidan</a>
     
     <script src="flashcards.js"></script>
 </body>
