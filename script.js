@@ -37,8 +37,17 @@ document.addEventListener("DOMContentLoaded", function () {
         { question: "Vad är diafragmans funktion?", options: ["Hjälper till med andning", "Reglerar kroppstemperaturen", "Producerar röda blodkroppar"], answer: "Hjälper till med andning" }
     ];
     
+ let currentQuestionIndex = 0;
     const quizContainer = document.getElementById("quiz-container");
-    questions.forEach((q, index) => {
+    const nextButton = document.createElement("button");
+    nextButton.textContent = "Nästa fråga";
+    nextButton.style.display = "none";
+    nextButton.onclick = showNextQuestion;
+    quizContainer.appendChild(nextButton);
+
+    function showQuestion(index) {
+        quizContainer.innerHTML = "";
+        const q = questions[index];
         const questionEl = document.createElement("div");
         questionEl.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
         
@@ -52,16 +61,32 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         
         quizContainer.appendChild(questionEl);
-    });
+        quizContainer.appendChild(nextButton);
+        nextButton.style.display = "none";
+    }
 
     function checkAnswer(button, correctAnswer) {
-        document.querySelectorAll("button").forEach(btn => btn.style.backgroundColor = "");
+        document.querySelectorAll("button").forEach(btn => btn.disabled = true);
         if (button.textContent === correctAnswer) {
             button.style.backgroundColor = "lightgreen";
         } else {
             button.style.backgroundColor = "lightcoral";
         }
+        nextButton.style.display = "block";
     }
+
+    function showNextQuestion() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            showQuestion(currentQuestionIndex);
+        } else {
+            quizContainer.innerHTML = "<p>Quizet är klart! Bra jobbat!</p>";
+        }
+    }
+
+    showQuestion(currentQuestionIndex);
+});
+
 
     // Bildquiz med bilder
     const imageQuizContainer = document.getElementById("image-quiz-container");
