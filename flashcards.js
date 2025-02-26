@@ -28,32 +28,40 @@ const flashcards = [
     { term: "Könsmogen", definition: "När kroppen kan få barn, sker under puberteten." }
 ];
 
-// Blanda korten i slumpmässig ordning
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+
+// Funktion för att slumpa korten vid start
+function shuffleFlashcards() {
+    for (let i = flashcards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [flashcards[i], flashcards[j]] = [flashcards[j], flashcards[i]];
     }
 }
-
-shuffleArray(flashcards);
 
 let currentCard = 0;
 let showingDefinition = false;
 
-function showDefinition() {
-    const termElement = document.getElementById("term");
-    if (!showingDefinition) {
-        termElement.innerText = flashcards[currentCard].definition;
-        showingDefinition = true;
+document.addEventListener("DOMContentLoaded", function () {
+    shuffleFlashcards(); // Slumpa korten vid start
+    updateFlashcard();
+});
+
+function updateFlashcard() {
+    const flashcardElement = document.getElementById("flashcard");
+    flashcardElement.textContent = flashcards[currentCard].term;
+}
+
+function flipCard() {
+    const flashcardElement = document.getElementById("flashcard");
+    if (showingDefinition) {
+        flashcardElement.textContent = flashcards[currentCard].term;
     } else {
-        termElement.innerText = flashcards[currentCard].term;
-        showingDefinition = false;
+        flashcardElement.textContent = flashcards[currentCard].definition;
     }
+    showingDefinition = !showingDefinition;
 }
 
 function nextCard() {
     currentCard = (currentCard + 1) % flashcards.length;
-    document.getElementById("term").innerText = flashcards[currentCard].term;
     showingDefinition = false;
+    updateFlashcard();
 }
