@@ -90,12 +90,16 @@ let questions = [
 
 // Funktion för att slumpa quizfrågor
 function shuffleQuestions() {
-    questions = questions.sort(() => Math.random() - 0.5);
+    questions = [...questions].sort(() => Math.random() - 0.5);
 }
 
 let currentQuestionIndex = 0;
 
 function showQuestion(index) {
+    if (questions.length === 0) {
+        document.getElementById("quiz-container").innerHTML = "<p>Inga frågor tillgängliga.</p>";
+        return;
+    }
     if (index >= questions.length) {
         document.getElementById("quiz-container").innerHTML = "<p>Quizet är klart! Bra jobbat!</p>";
         return;
