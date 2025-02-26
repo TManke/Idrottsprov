@@ -95,7 +95,7 @@ let questions = [
     { question: "Vilken muskel är störst i kroppen?", options: ["Biceps", "Gluteus maximus", "Hjärtmuskeln"], answer: "Gluteus maximus" },
     { question: "Hur många lungor har vi?", options: ["1", "2", "3"], answer: "2" },
     { question: "Hur många kammare har hjärtat?", options: ["2", "3", "4"], answer: "4" },
-    { question: "Vilken gas andas vi in mest av?", options: ["Syre", "Kväve", "Koldioxid"], answer: "Kväve" }
+    { question: "Vilken gas andas vi in mest av?", options: ["Syre", "Kväve", "Koldioxid"], answer: "Kväve" },
             { question: "Vad heter kroppens minsta ben?", options: ["Stigbygeln", "Lårbenet", "Nyckelbenet"], answer: "Stigbygeln" },
         { question: "Hur många lungor har vi?", options: ["1", "2", "3"], answer: "2" },
         { question: "Hur många kammare har hjärtat?", options: ["2", "3", "4"], answer: "4" },
