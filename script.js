@@ -1,64 +1,31 @@
 const questions = [
-    {
-        question: "Vad betyder fysisk hälsa?",
-        options: ["Att känna sig glad", "Att kroppen mår bra", "Att ha många vänner"],
-        answer: "Att kroppen mår bra"
-    },
-    {
-        question: "Vad betyder psykisk hälsa?",
-        options: ["Hur vi mår inuti", "Hur snabbt vi springer", "Hur starka våra muskler är"],
-        answer: "Hur vi mår inuti"
-    },
-    {
-        question: "Vad betyder social hälsa?",
-        options: ["Att vi har bra relationer och känner gemenskap", "Att vi tränar mycket", "Att vi äter hälsosamt"],
-        answer: "Att vi har bra relationer och känner gemenskap"
-    },
-    {
-        question: "Hur kan träning påverka vår psykiska hälsa?",
-        options: ["Den gör oss tröttare", "Den minskar stress och gör oss gladare", "Den gör oss hungrigare"],
-        answer: "Den minskar stress och gör oss gladare"
-    },
-    {
-        question: "Vilken av dessa är en fysisk effekt av träning?",
-        options: ["Bättre balans", "Ökad stress", "Sämre koncentration"],
-        answer: "Bättre balans"
-    },
-    {
-        question: "Vilken av dessa är en psykisk effekt av träning?",
-        options: ["Bättre minne", "Svagare muskler", "Sämre immunförsvar"],
-        answer: "Bättre minne"
-    },
-    {
-        question: "Vilken av dessa är en social effekt av träning?",
-        options: ["Ökad gemenskap", "Bättre kondition", "Starkare skelett"],
-        answer: "Ökad gemenskap"
-    },
-    {
-        question: "Hur många minuter om dagen bör barn och unga röra sig?",
-        options: ["30 minuter", "60 minuter", "90 minuter"],
-        answer: "60 minuter"
-    },
-    {
-        question: "Vilopuls är...",
-        options: ["Pulsen när vi vilar", "Pulsen vid fysisk aktivitet", "Den högsta pulsen vi kan ha"],
-        answer: "Pulsen när vi vilar"
-    },
-    {
-        question: "Vad är maxpuls?",
-        options: ["Pulsen vid vila", "Den högsta pulsen kroppen kan ha", "Pulsen vid lätt träning"],
-        answer: "Den högsta pulsen kroppen kan ha"
-    },
-    {
-        question: "Vad ger kolhydrater till kroppen?",
-        options: ["Energi", "Skydd mot sjukdomar", "Bygger muskler"],
-        answer: "Energi"
-    },
-    {
-        question: "Varför är sömn viktigt?",
-        options: ["För att kroppen och hjärnan ska återhämta sig", "För att vi ska bli hungrigare", "För att få bättre syn"],
-        answer: "För att kroppen och hjärnan ska återhämta sig"
-    }
+    { question: "Vad är cellandning?", options: ["Druvsocker + syre → koldioxid + vatten + energi", "Syre + vatten → druvsocker + koldioxid", "Blodet transporterar syre till musklerna"], answer: "Druvsocker + syre → koldioxid + vatten + energi" },
+    { question: "Vad är kroppens största organ?", options: ["Huden", "Levern", "Hjärtat"], answer: "Huden" },
+    { question: "Vilka tre lager består huden av?", options: ["Överhuden, läderhuden, underhuden", "Ytskiktet, mellanlagret, inre huden", "Epidermis, dermis, hypodermis"], answer: "Överhuden, läderhuden, underhuden" },
+    { question: "Vilket ämne gör skelettet starkt?", options: ["Kalk", "Järn", "Protein"], answer: "Kalk" },
+    { question: "Vilket ben skyddar hjärnan?", options: ["Skallbenet", "Lårbenet", "Nyckelbenet"], answer: "Skallbenet" },
+    { question: "Vad bildas i benmärgen?", options: ["Blodceller", "Muskelfibrer", "Kalk"], answer: "Blodceller" },
+    { question: "Vad är en kulled?", options: ["En led som kan röra sig i alla riktningar", "En led som bara kan böjas åt ett håll", "En benstruktur i foten"], answer: "En led som kan röra sig i alla riktningar" },
+    { question: "Var finns gångjärnsleder?", options: ["Knän och armbågar", "Axlar och höfter", "Fingrar och tår"], answer: "Knän och armbågar" },
+    { question: "Vilka muskler styr vi med viljan?", options: ["Skelettmuskler", "Hjärtmuskler", "Glatt muskulatur"], answer: "Skelettmuskler" },
+    { question: "Vilka två muskler samarbetar i överarmen?", options: ["Biceps och triceps", "Quadriceps och hamstrings", "Pectoralis och deltoideus"], answer: "Biceps och triceps" },
+    { question: "Vad gör hjärtat?", options: ["Pumpar runt blodet i kroppen", "Producerar syre", "Renar blodet"], answer: "Pumpar runt blodet i kroppen" },
+    { question: "Vad gör röda blodkroppar?", options: ["Transporterar syre", "Bekämpar bakterier", "Läker sår"], answer: "Transporterar syre" },
+    { question: "Vad gör vita blodkroppar?", options: ["Bekämpar infektioner", "Transporterar näring", "Producera hormoner"], answer: "Bekämpar infektioner" },
+    { question: "Vad gör blodplättar?", options: ["Hjälper blodet att koagulera", "Transporterar syre", "Bryter ner socker"], answer: "Hjälper blodet att koagulera" },
+    { question: "Vad kallas blodkärlen som transporterar syrerikt blod?", options: ["Artärer", "Vener", "Kapillärer"], answer: "Artärer" },
+    { question: "Vad är puls?", options: ["Hur snabbt hjärtat slår", "Trycket i lungorna", "Hjärnans elektriska aktivitet"], answer: "Hur snabbt hjärtat slår" },
+    { question: "Vad är immunsystemets funktion?", options: ["Skydda kroppen mot sjukdomar", "Transportera syre", "Producera insulin"], answer: "Skydda kroppen mot sjukdomar" },
+    { question: "Vad är antibiotika effektivt mot?", options: ["Bakterier", "Virus", "Svampinfektioner"], answer: "Bakterier" },
+    { question: "Hur fungerar vaccin?", options: ["Lär kroppen att försvara sig mot ett visst virus", "Dödar bakterier direkt", "Gör kroppen immun mot alla sjukdomar"], answer: "Lär kroppen att försvara sig mot ett visst virus" },
+    { question: "Vad sker under puberteten?", options: ["Kroppen förändras till en vuxenkropp", "Blodcirkulationen ökar", "Immunförsvaret blir svagare"], answer: "Kroppen förändras till en vuxenkropp" },
+    { question: "Vad orsakar målbrottet hos pojkar?", options: ["Förändringar i struphuvudet", "Ökad muskelmassa", "Tillväxt av hjärnan"], answer: "Förändringar i struphuvudet" },
+    { question: "Vad kan puberteten leda till på huden?", options: ["Akne", "Eksem", "Hudcancer"], answer: "Akne" },
+    { question: "Vad betyder könsmogen?", options: ["Att man kan få barn", "Att man har en vuxen hjärna", "Att man har slutat växa"], answer: "Att man kan få barn" },
+    { question: "Vilka blodkärl transporterar syrefattigt blod?", options: ["Vener", "Artärer", "Kapillärer"], answer: "Vener" },
+    { question: "Vad är kroppens minsta blodkärl?", options: ["Kapillärer", "Artärer", "Vener"], answer: "Kapillärer" },
+    { question: "Varför ökar pulsen när vi tränar?", options: ["För att transportera mer syre", "För att kyla ner kroppen", "För att förbränna fett"], answer: "För att transportera mer syre" },
+    { question: "Vilken typ av blodkropp bekämpar virus?", options: ["Vita blodkroppar", "Röda blodkroppar", "Blodplättar"], answer: "Vita blodkroppar" }
 ];
 
 let currentQuestion = 0;
@@ -89,13 +56,13 @@ function showQuestion() {
 
 function checkAnswer(event) {
     if (event.target.innerText === questions[currentQuestion].answer) {
-        event.target.style.backgroundColor = "lightgreen"; // Rätt svar blir grönt
+        event.target.style.backgroundColor = "lightgreen";
         setTimeout(() => {
             currentQuestion++;
             showQuestion();
-        }, 1000); // Går till nästa fråga efter 1 sekund
+        }, 1000);
     } else {
-        event.target.style.backgroundColor = "lightcoral"; // Fel svar blir rött
+        event.target.style.backgroundColor = "lightcoral";
     }
 }
 
