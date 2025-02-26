@@ -1,141 +1,129 @@
-// Uppdaterat script.js för att inkludera alla funktioner
-
 document.addEventListener("DOMContentLoaded", function () {
+    // Hämta alla sektioner
+    const quizSection = document.getElementById("quiz-section");
+    const imageQuizSection = document.getElementById("image-quiz-section");
+    const dragDropSection = document.getElementById("drag-drop-section");
+
     // Hämta knapparna
-    const quizButton = document.getElementById("quizButton");
-    const imageQuizButton = document.getElementById("imageQuizButton");
-    const dragDropButton = document.getElementById("dragDropButton");
-    
-    // Hämta sektionerna
-    const quizSection = document.getElementById("quizSection");
-    const imageQuizSection = document.getElementById("imageQuizSection");
-    const dragDropSection = document.getElementById("dragDropSection");
-    
-    // Visa rätt sektion vid knapptryck
-    quizButton.addEventListener("click", function () {
+    const quizBtn = document.getElementById("quiz-btn");
+    const imageQuizBtn = document.getElementById("image-quiz-btn");
+    const dragDropBtn = document.getElementById("drag-drop-btn");
+
+    // Visa bara quizet vid start
+    quizSection.style.display = "block";
+    imageQuizSection.style.display = "none";
+    dragDropSection.style.display = "none";
+
+    // Eventlyssnare för knapparna
+    quizBtn.addEventListener("click", function () {
         showSection(quizSection);
     });
 
-    imageQuizButton.addEventListener("click", function () {
+    imageQuizBtn.addEventListener("click", function () {
         showSection(imageQuizSection);
     });
 
-    dragDropButton.addEventListener("click", function () {
+    dragDropBtn.addEventListener("click", function () {
         showSection(dragDropSection);
     });
 
+    // Funktion för att visa rätt sektion och dölja andra
     function showSection(section) {
         quizSection.style.display = "none";
         imageQuizSection.style.display = "none";
         dragDropSection.style.display = "none";
+
         section.style.display = "block";
     }
 
-    // QUIZ MED 30 FRÅGOR
-    const quizQuestions = [
-        { question: "Vad heter kroppens största organ?", options: ["Hjärnan", "Levern", "Huden"], answer: "Huden" },
-        { question: "Vilket ämne transporterar syre i blodet?", options: ["Hemoglobin", "Insulin", "Kollagen"], answer: "Hemoglobin" },
-        // Lägg till fler frågor här upp till 30
+    // Quiz med 30 frågor
+    const questions = [
+        { question: "Vad är hjärtats huvudsakliga funktion?", answer: "Att pumpa blod" },
+        { question: "Vilken del av kroppen ansvarar för gasutbyte?", answer: "Lungorna" },
+        { question: "Vad heter det största blodkärlet i kroppen?", answer: "Aortan" },
+        // Lägg till fler frågor här (totalt 30 frågor)
     ];
 
-    const quizContainer = document.getElementById("quiz");
-    quizQuestions.forEach((q, index) => {
-        const questionElem = document.createElement("div");
-        questionElem.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
-        q.options.forEach(option => {
-            const btn = document.createElement("button");
-            btn.textContent = option;
-            btn.addEventListener("click", function () {
-                if (option === q.answer) {
-                    btn.style.backgroundColor = "green";
-                } else {
-                    btn.style.backgroundColor = "red";
-                }
-            });
-            questionElem.appendChild(btn);
-        });
-        quizContainer.appendChild(questionElem);
+    const quizContainer = document.getElementById("quiz-container");
+    questions.forEach((q, index) => {
+        const questionEl = document.createElement("div");
+        questionEl.innerHTML = `<p>${index + 1}. ${q.question}</p>
+            <input type="text" id="answer-${index}" />
+            <button onclick="checkAnswer(${index}, '${q.answer}')">Kolla svar</button>
+            <span id="result-${index}"></span>`;
+        quizContainer.appendChild(questionEl);
     });
 
-    // BILDQUIZ
-    const imageQuizContainer = document.getElementById("imageQuiz");
+    window.checkAnswer = function (index, correctAnswer) {
+        const userAnswer = document.getElementById(`answer-${index}`).value.trim();
+        const resultEl = document.getElementById(`result-${index}`);
+
+        if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+            resultEl.innerHTML = "✅ Rätt!";
+            resultEl.style.color = "green";
+        } else {
+            resultEl.innerHTML = "❌ Fel, försök igen.";
+            resultEl.style.color = "red";
+        }
+    };
+
+    // Bildquiz (Exempel, behöver anpassas)
+    const imageQuizContainer = document.getElementById("image-quiz-container");
     const imageQuestions = [
-        { img: "1.png", question: "Vad visar bilden?", answer: "Blodomloppet" },
-        { img: "2.png", question: "Vad innehåller blodet?", answer: "Röda blodkroppar" },
+        { img: "1.png", question: "Vad kallas denna kroppsdel?", answer: "Hjärtat" },
+        { img: "2.png", question: "Vad visar denna bild?", answer: "Blodomloppet" },
         // Lägg till fler bildfrågor
     ];
 
-    imageQuestions.forEach(q => {
-        const imgElem = document.createElement("img");
-        imgElem.src = q.img;
-        imgElem.style.width = "200px";
-        const questionElem = document.createElement("p");
-        questionElem.textContent = q.question;
-        const inputElem = document.createElement("input");
-        const checkBtn = document.createElement("button");
-        checkBtn.textContent = "Kolla svar";
-        checkBtn.addEventListener("click", function () {
-            if (inputElem.value.toLowerCase() === q.answer.toLowerCase()) {
-                inputElem.style.backgroundColor = "green";
-            } else {
-                inputElem.style.backgroundColor = "red";
-            }
-        });
-        imageQuizContainer.appendChild(imgElem);
-        imageQuizContainer.appendChild(questionElem);
-        imageQuizContainer.appendChild(inputElem);
-        imageQuizContainer.appendChild(checkBtn);
+    imageQuestions.forEach((q, index) => {
+        const imgEl = document.createElement("img");
+        imgEl.src = q.img;
+        imgEl.alt = `Fråga ${index + 1}`;
+        imgEl.style.width = "200px";
+
+        const questionEl = document.createElement("div");
+        questionEl.innerHTML = `<p>${q.question}</p>
+            <input type="text" id="image-answer-${index}" />
+            <button onclick="checkImageAnswer(${index}, '${q.answer}')">Kolla svar</button>
+            <span id="image-result-${index}"></span>`;
+
+        imageQuizContainer.appendChild(imgEl);
+        imageQuizContainer.appendChild(questionEl);
     });
 
-    // DRAG & DROP
-    const dragDropContainer = document.getElementById("dragDrop");
-    const items = [
-        { id: "heart", text: "Hjärta" },
-        { id: "lung", text: "Lunga" }
-    ];
-    const dropZones = [
-        { id: "heart-zone", text: "Här ska hjärtat vara" },
-        { id: "lung-zone", text: "Här ska lungan vara" }
-    ];
+    window.checkImageAnswer = function (index, correctAnswer) {
+        const userAnswer = document.getElementById(`image-answer-${index}`).value.trim();
+        const resultEl = document.getElementById(`image-result-${index}`);
 
-    items.forEach(item => {
-        const elem = document.createElement("div");
-        elem.textContent = item.text;
-        elem.setAttribute("draggable", true);
-        elem.setAttribute("id", item.id);
-        elem.style.padding = "10px";
-        elem.style.margin = "5px";
-        elem.style.backgroundColor = "lightblue";
-        dragDropContainer.appendChild(elem);
+        if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+            resultEl.innerHTML = "✅ Rätt!";
+            resultEl.style.color = "green";
+        } else {
+            resultEl.innerHTML = "❌ Fel, försök igen.";
+            resultEl.style.color = "red";
+        }
+    };
 
-        elem.addEventListener("dragstart", function (e) {
-            e.dataTransfer.setData("text", e.target.id);
+    // Drag-och-släpp-funktion
+    const dragItems = document.querySelectorAll(".drag-item");
+    const dropZones = document.querySelectorAll(".drop-zone");
+
+    dragItems.forEach((item) => {
+        item.addEventListener("dragstart", (event) => {
+            event.dataTransfer.setData("text", event.target.id);
         });
     });
 
-    dropZones.forEach(zone => {
-        const dropElem = document.createElement("div");
-        dropElem.textContent = zone.text;
-        dropElem.setAttribute("id", zone.id);
-        dropElem.style.padding = "20px";
-        dropElem.style.margin = "10px";
-        dropElem.style.border = "2px dashed black";
-        dragDropContainer.appendChild(dropElem);
-
-        dropElem.addEventListener("dragover", function (e) {
-            e.preventDefault();
+    dropZones.forEach((zone) => {
+        zone.addEventListener("dragover", (event) => {
+            event.preventDefault();
         });
 
-        dropElem.addEventListener("drop", function (e) {
-            e.preventDefault();
-            const data = e.dataTransfer.getData("text");
-            const draggedElem = document.getElementById(data);
-            if (zone.id.includes(data)) {
-                dropElem.appendChild(draggedElem);
-                dropElem.style.backgroundColor = "lightgreen";
-            } else {
-                dropElem.style.backgroundColor = "lightcoral";
-            }
+        zone.addEventListener("drop", (event) => {
+            event.preventDefault();
+            const draggedId = event.dataTransfer.getData("text");
+            const draggedItem = document.getElementById(draggedId);
+            event.target.appendChild(draggedItem);
         });
     });
 });
