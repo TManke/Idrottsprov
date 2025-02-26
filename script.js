@@ -43,6 +43,7 @@ let showingDefinition = false;
 document.addEventListener("DOMContentLoaded", function () {
     shuffleFlashcards(); // Slumpa korten vid start
     shuffleQuestions(); // Slumpa quiz-frågorna vid start
+    currentQuestionIndex = 0;
     updateFlashcard();
     showQuestion(currentQuestionIndex);
 });
@@ -95,6 +96,11 @@ function shuffleQuestions() {
 let currentQuestionIndex = 0;
 
 function showQuestion(index) {
+    if (index >= questions.length) {
+        document.getElementById("quiz-container").innerHTML = "<p>Quizet är klart! Bra jobbat!</p>";
+        return;
+    }
+    
     const quizContainer = document.getElementById("quiz-container");
     quizContainer.innerHTML = "";
     const q = questions[index];
@@ -130,9 +136,5 @@ function checkAnswer(button, correctAnswer) {
 
 function showNextQuestion() {
     currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion(currentQuestionIndex);
-    } else {
-        document.getElementById("quiz-container").innerHTML = "<p>Quizet är klart! Bra jobbat!</p>";
-    }
+    showQuestion(currentQuestionIndex);
 }
