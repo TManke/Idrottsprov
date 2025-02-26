@@ -66,10 +66,14 @@ function nextCard() {
     updateFlashcard();
 }
 
-// Funktion för att starta om flashcards
-function restartFlashcards() {
+// Funktion för att starta om både quiz och flashcards
+function restartAll() {
     shuffleFlashcards();
     currentCard = 0;
     showingDefinition = false;
     updateFlashcard();
+    
+    shuffleQuestions();
+    currentQuestionIndex = 0;
+    showQuestion(currentQuestionIndex);
 }
