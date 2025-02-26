@@ -65,3 +65,11 @@ function nextCard() {
     showingDefinition = false;
     updateFlashcard();
 }
+
+// Funktion för att starta om flashcards
+function restartFlashcards() {
+    shuffleFlashcards();
+    currentCard = 0;
+    showingDefinition = false;
+    updateFlashcard();
+}
