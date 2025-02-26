@@ -17,27 +17,24 @@ document.addEventListener("DOMContentLoaded", function () {
         { question: "Vad heter det största blodkärlet i kroppen?", options: ["Vena cava", "Aortan", "Kapillärer"], answer: "Aortan" },
         { question: "Vilket organ filtrerar blodet?", options: ["Magsäcken", "Njurar", "Lungorna"], answer: "Njurar" },
         { question: "Vad kallas de minsta blodkärlen?", options: ["Artärer", "Vener", "Kapillärer"], answer: "Kapillärer" },
-        { question: "Vilken del av hjärnan styr balans?", options: ["Lillhjärnan", "Storhjärnan", "Hjärnstammen"], answer: "Lillhjärnan" },
-        { question: "Vad gör blodplättar?", options: ["Transporterar syre", "Koagulerar blod", "Bryter ner fett"], answer: "Koagulerar blod" },
-        { question: "Vad är kroppens största organ?", options: ["Huden", "Levern", "Lungorna"], answer: "Huden" },
-        { question: "Hur många ben har en människa?", options: ["206", "150", "300"], answer: "206" },
-        { question: "Vilken muskel är störst i kroppen?", options: ["Biceps", "Gluteus maximus", "Hjärtmuskeln"], answer: "Gluteus maximus" },
-        { question: "Vilken blodkropp bekämpar infektioner?", options: ["Röda blodkroppar", "Vita blodkroppar", "Blodplättar"], answer: "Vita blodkroppar" },
-        { question: "Vad heter kroppens minsta ben?", options: ["Stigbygeln", "Lårbenet", "Nyckelbenet"], answer: "Stigbygeln" },
-        { question: "Vilken del av hjärtat pumpar blod till kroppen?", options: ["Höger kammare", "Vänster kammare", "Förmaken"], answer: "Vänster kammare" },
-        { question: "Vilken gas andas vi in mest av?", options: ["Syre", "Koldioxid", "Kväve"], answer: "Kväve" },
-        { question: "Hur många lungor har vi?", options: ["1", "2", "3"], answer: "2" },
-        { question: "Vilken del av ögat reglerar ljusinsläpp?", options: ["Linsen", "Pupillen", "Hornhinnan"], answer: "Pupillen" },
-        { question: "Vad gör njurarna?", options: ["Bryter ner fett", "Filtrerar blodet", "Producerar insulin"], answer: "Filtrerar blodet" },
         { question: "Vilket organ producerar insulin?", options: ["Levern", "Bukspottkörteln", "Mjälten"], answer: "Bukspottkörteln" },
+        { question: "Hur många ben har en människa?", options: ["206", "150", "300"], answer: "206" },
+        { question: "Vilken blodkropp bekämpar infektioner?", options: ["Röda blodkroppar", "Vita blodkroppar", "Blodplättar"], answer: "Vita blodkroppar" },
+        { question: "Vad gör blodplättar?", options: ["Transporterar syre", "Koagulerar blod", "Bryter ner fett"], answer: "Koagulerar blod" },
+        { question: "Vilken muskel är störst i kroppen?", options: ["Biceps", "Gluteus maximus", "Hjärtmuskeln"], answer: "Gluteus maximus" },
+        { question: "Vad heter kroppens minsta ben?", options: ["Stigbygeln", "Lårbenet", "Nyckelbenet"], answer: "Stigbygeln" },
+        { question: "Hur många lungor har vi?", options: ["1", "2", "3"], answer: "2" },
         { question: "Hur många kammare har hjärtat?", options: ["2", "3", "4"], answer: "4" },
-        { question: "Vilken funktion har levern?", options: ["Producera insulin", "Bryta ner gifter", "Transportera syre"], answer: "Bryta ner gifter" },
-        { question: "Vilken del av hjärnan styr andningen?", options: ["Storhjärnan", "Hjärnstammen", "Lillhjärnan"], answer: "Hjärnstammen" },
-        { question: "Vad är det kemiska tecknet för syre?", options: ["O", "H", "C"], answer: "O" },
-        { question: "Vad gör lungorna?", options: ["Filtrerar blod", "Syresätter blod", "Producerar insulin"], answer: "Syresätter blod" },
-        { question: "Hur många revben har en människa?", options: ["10", "12", "14"], answer: "12" },
         { question: "Vilken del av hjärtat tar emot syrefattigt blod?", options: ["Höger förmak", "Vänster kammare", "Höger kammare"], answer: "Höger förmak" },
-        { question: "Vad transporterar syre i blodet?", options: ["Hemoglobin", "Insulin", "Kollagen"], answer: "Hemoglobin" }
+        { question: "Vad transporterar syre i blodet?", options: ["Hemoglobin", "Insulin", "Kollagen"], answer: "Hemoglobin" },
+        { question: "Vilket organ bryter ner alkohol?", options: ["Njurar", "Levern", "Lungorna"], answer: "Levern" },
+        { question: "Vad är huvudfunktionen för lungorna?", options: ["Filtrera blod", "Syresätta blodet", "Producera insulin"], answer: "Syresätta blodet" },
+        { question: "Vilken gas andas vi in mest av?", options: ["Syre", "Kväve", "Koldioxid"], answer: "Kväve" },
+        { question: "Vad gör lymfsystemet?", options: ["Transporterar lymfvätska och bekämpar infektioner", "Producerar hormoner", "Reglerar kroppstemperaturen"], answer: "Transporterar lymfvätska och bekämpar infektioner" },
+        { question: "Vad gör njurarna?", options: ["Filtrerar blod", "Producerar insulin", "Hjälper till med matsmältning"], answer: "Filtrerar blod" },
+        { question: "Hur många revben har en människa?", options: ["10", "12", "14"], answer: "12" },
+        { question: "Vad kallas den största nerven i kroppen?", options: ["Synnerven", "Ischiasnerven", "Hjärnstammen"], answer: "Ischiasnerven" },
+        { question: "Vad är diafragmans funktion?", options: ["Hjälper till med andning", "Reglerar kroppstemperaturen", "Producerar röda blodkroppar"], answer: "Hjälper till med andning" }
     ];
     
     const quizContainer = document.getElementById("quiz-container");
@@ -65,4 +62,32 @@ document.addEventListener("DOMContentLoaded", function () {
             button.style.backgroundColor = "lightcoral";
         }
     }
+
+    // Bildquiz med bilder
+    const imageQuizContainer = document.getElementById("image-quiz-container");
+    const imageQuestions = [
+        { img: "1.png", question: "Vad föreställer denna bild?", options: ["Hjärtat", "Lungorna", "Levern"], answer: "Hjärtat" },
+        { img: "2.png", question: "Vilken del av kroppen är detta?", options: ["Njurar", "Lungorna", "Magsäcken"], answer: "Lungorna" },
+        { img: "3.png", question: "Vad visas på denna bild?", options: ["Blodomloppet", "Skelettet", "Muskler"], answer: "Blodomloppet" }
+    ];
+    
+    imageQuestions.forEach((q, index) => {
+        const imgEl = document.createElement("img");
+        imgEl.src = q.img;
+        imgEl.style.width = "200px";
+        const questionEl = document.createElement("p");
+        questionEl.textContent = q.question;
+        
+        q.options.forEach(option => {
+            const btn = document.createElement("button");
+            btn.textContent = option;
+            btn.onclick = function () {
+                checkAnswer(btn, q.answer);
+            };
+            questionEl.appendChild(btn);
+        });
+        
+        imageQuizContainer.appendChild(imgEl);
+        imageQuizContainer.appendChild(questionEl);
+    });
 });
