@@ -83,31 +83,20 @@ function restartAll() {
 
 // QUIZ FUNKTIONALITET
 let questions = [
-        { question: "Vad är hjärtats huvudsakliga funktion?", options: ["Att pumpa blod", "Att producera syre", "Att bryta ner mat"], answer: "Att pumpa blod" },
-        { question: "Vilken del av kroppen ansvarar för syreutbyte?", options: ["Hjärtat", "Lungorna", "Levern"], answer: "Lungorna" },
-        { question: "Vad heter det största blodkärlet i kroppen?", options: ["Vena cava", "Aortan", "Kapillärer"], answer: "Aortan" },
-        { question: "Vilket organ filtrerar blodet?", options: ["Magsäcken", "Njurar", "Lungorna"], answer: "Njurar" },
-        { question: "Vad kallas de minsta blodkärlen?", options: ["Artärer", "Vener", "Kapillärer"], answer: "Kapillärer" },
-        { question: "Vilket organ producerar insulin?", options: ["Levern", "Bukspottkörteln", "Mjälten"], answer: "Bukspottkörteln" },
-        { question: "Hur många ben har en människa?", options: ["206", "150", "300"], answer: "206" },
-        { question: "Vilken blodkropp bekämpar infektioner?", options: ["Röda blodkroppar", "Vita blodkroppar", "Blodplättar"], answer: "Vita blodkroppar" },
-        { question: "Vad gör blodplättar?", options: ["Transporterar syre", "Koagulerar blod", "Bryter ner fett"], answer: "Koagulerar blod" },
-        { question: "Vilken muskel är störst i kroppen?", options: ["Biceps", "Gluteus maximus", "Hjärtmuskeln"], answer: "Gluteus maximus" },
-        { question: "Vad heter kroppens minsta ben?", options: ["Stigbygeln", "Lårbenet", "Nyckelbenet"], answer: "Stigbygeln" },
-        { question: "Hur många lungor har vi?", options: ["1", "2", "3"], answer: "2" },
-        { question: "Hur många kammare har hjärtat?", options: ["2", "3", "4"], answer: "4" },
-        { question: "Vilken del av hjärtat tar emot syrefattigt blod?", options: ["Höger förmak", "Vänster kammare", "Höger kammare"], answer: "Höger förmak" },
-        { question: "Vad transporterar syre i blodet?", options: ["Hemoglobin", "Insulin", "Kollagen"], answer: "Hemoglobin" },
-        { question: "Vilket organ bryter ner alkohol?", options: ["Njurar", "Levern", "Lungorna"], answer: "Levern" },
-        { question: "Vad är huvudfunktionen för lungorna?", options: ["Filtrera blod", "Syresätta blodet", "Producera insulin"], answer: "Syresätta blodet" },
-        { question: "Vilken gas andas vi in mest av?", options: ["Syre", "Kväve", "Koldioxid"], answer: "Kväve" },
-        { question: "Vad gör lymfsystemet?", options: ["Transporterar lymfvätska och bekämpar infektioner", "Producerar hormoner", "Reglerar kroppstemperaturen"], answer: "Transporterar lymfvätska och bekämpar infektioner" },
-        { question: "Vad gör njurarna?", options: ["Filtrerar blod", "Producerar insulin", "Hjälper till med matsmältning"], answer: "Filtrerar blod" },
-        { question: "Hur många revben har en människa?", options: ["10", "12", "14"], answer: "12" },
-        { question: "Vad kallas den största nerven i kroppen?", options: ["Synnerven", "Ischiasnerven", "Hjärnstammen"], answer: "Ischiasnerven" },
-        { question: "Vad är diafragmans funktion?", options: ["Hjälper till med andning", "Reglerar kroppstemperaturen", "Producerar röda blodkroppar"], answer: "Hjälper till med andning" }
-    ];
-
+    { question: "Vad är hjärtats huvudsakliga funktion?", options: ["Att pumpa blod", "Att producera syre", "Att bryta ner mat"], answer: "Att pumpa blod" },
+    { question: "Vilken del av kroppen ansvarar för gasutbyte?", options: ["Hjärtat", "Lungorna", "Levern"], answer: "Lungorna" },
+    { question: "Vad heter det största blodkärlet i kroppen?", options: ["Vena cava", "Aortan", "Kapillärer"], answer: "Aortan" },
+    { question: "Vilket organ filtrerar blodet?", options: ["Magsäcken", "Njurar", "Lungorna"], answer: "Njurar" },
+    { question: "Vad kallas de minsta blodkärlen?", options: ["Artärer", "Vener", "Kapillärer"], answer: "Kapillärer" },
+    { question: "Vilket organ producerar insulin?", options: ["Levern", "Bukspottkörteln", "Mjälten"], answer: "Bukspottkörteln" },
+    { question: "Hur många ben har en människa?", options: ["206", "150", "300"], answer: "206" },
+    { question: "Vilken blodkropp bekämpar infektioner?", options: ["Röda blodkroppar", "Vita blodkroppar", "Blodplättar"], answer: "Vita blodkroppar" },
+    { question: "Vad gör blodplättar?", options: ["Transporterar syre", "Koagulerar blod", "Bryter ner fett"], answer: "Koagulerar blod" },
+    { question: "Vilken muskel är störst i kroppen?", options: ["Biceps", "Gluteus maximus", "Hjärtmuskeln"], answer: "Gluteus maximus" },
+    { question: "Hur många lungor har vi?", options: ["1", "2", "3"], answer: "2" },
+    { question: "Hur många kammare har hjärtat?", options: ["2", "3", "4"], answer: "4" },
+    { question: "Vilken gas andas vi in mest av?", options: ["Syre", "Kväve", "Koldioxid"], answer: "Kväve" }
+];
 
 // Funktion för att slumpa quizfrågor
 function shuffleQuestions() {
