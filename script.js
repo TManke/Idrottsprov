@@ -1,5 +1,14 @@
 // Uppdaterat script för att hantera flera quiz
 
+document.addEventListener("DOMContentLoaded", () => {
+    const quizSelector = document.createElement("div");
+    quizSelector.innerHTML = `
+        <button onclick="toggleQuiz('quiz1')">Quiz 1</button>
+        <button onclick="toggleQuiz('quiz2')">Quiz 2</button>
+    `;
+    document.body.insertBefore(quizSelector, document.getElementById("quiz"));
+});
+
 const quizzes = {
     'quiz1': [
         { question: "Vad heter kroppens största organ?", options: ["Hjärtat", "Levern", "Huden", "Lungorna"], answer: "Huden" },
