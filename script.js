@@ -37,6 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
         { question: "Vad är diafragmans funktion?", options: ["Hjälper till med andning", "Reglerar kroppstemperaturen", "Producerar röda blodkroppar"], answer: "Hjälper till med andning" }
     ];
 
+        function shuffleQuestions() {
+        questions = questions.sort(() => Math.random() - 0.5);
+    }
     
     let currentQuestionIndex = 0;
     const quizContainer = document.getElementById("quiz-container");
