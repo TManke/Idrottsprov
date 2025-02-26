@@ -3,32 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Öva till prov</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Interaktiv Träning</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .section { display: none; margin-top: 20px; }
+        .flashcard { width: 300px; height: 200px; border: 1px solid black; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .drop-zone { border: 2px dashed gray; padding: 10px; min-height: 30px; margin-top: 20px; }
+    </style>
 </head>
 <body>
-    <button id="quiz-btn">Starta Quiz</button>
-    <button id="image-quiz-btn">Bildquiz</button>
-    <button id="drag-drop-btn">Drag & Släpp</button>
-
-    <div id="quiz-section">
+    <h1>Interaktiv Träning</h1>
+    
+    <button onclick="showSection('quiz-section')">Starta Quiz</button>
+    <button onclick="showSection('image-quiz-section')">Bildquiz</button>
+    <button onclick="showSection('flashcard-section')">Flashcards</button>
+    <button onclick="showSection('drag-drop-section')">Drag & Släpp</button>
+    
+    <div id="quiz-section" class="section">
         <h2>Quiz</h2>
         <div id="quiz-container"></div>
     </div>
-
-    <div id="image-quiz-section">
+    
+    <div id="image-quiz-section" class="section">
         <h2>Bildquiz</h2>
         <div id="image-quiz-container"></div>
     </div>
-
-    <div id="drag-drop-section">
-        <h2>Drag & Släpp</h2>
-        <div class="drop-zone">Släpp här</div>
-        <div class="drag-item" id="drag1" draggable="true">Hjärtat</div>
-        <div class="drag-item" id="drag2" draggable="true">Lungorna</div>
+    
+    <div id="flashcard-section" class="section">
+        <h2>Flashcards</h2>
+        <div class="flashcard" onclick="flipCard()">Klicka för att se bilden</div>
     </div>
-
+    
+    <div id="drag-drop-section" class="section">
+        <h2>Drag & Släpp</h2>
+        <div class="drop-zone" id="drop-area">Släpp rätt namn här</div>
+        <div class="drag-item" draggable="true">Hjärta</div>
+        <div class="drag-item" draggable="true">Blodkärl</div>
+    </div>
+    
     <script src="script.js"></script>
+    <script src="flashcards.js"></script>
 </body>
-
 </html>
