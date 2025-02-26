@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.showSection = showSection;
     showSection("quiz-section"); // Visa quiz som standard
 
-    // Quiz med 30 frågor (flervalsfrågor)
+// Quiz med 30 frågor (flervalsfrågor)
     const questions = [
         { question: "Vad är hjärtats huvudsakliga funktion?", options: ["Att pumpa blod", "Att producera syre", "Att bryta ner mat"], answer: "Att pumpa blod" },
         { question: "Vilken del av kroppen ansvarar för gasutbyte?", options: ["Hjärtat", "Lungorna", "Levern"], answer: "Lungorna" },
@@ -36,8 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
         { question: "Vad kallas den största nerven i kroppen?", options: ["Synnerven", "Ischiasnerven", "Hjärnstammen"], answer: "Ischiasnerven" },
         { question: "Vad är diafragmans funktion?", options: ["Hjälper till med andning", "Reglerar kroppstemperaturen", "Producerar röda blodkroppar"], answer: "Hjälper till med andning" }
     ];
+
     
- let currentQuestionIndex = 0;
+    let currentQuestionIndex = 0;
     const quizContainer = document.getElementById("quiz-container");
     const nextButton = document.createElement("button");
     nextButton.textContent = "Nästa fråga";
@@ -85,8 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     showQuestion(currentQuestionIndex);
-});
-
 
     // Bildquiz med bilder
     const imageQuizContainer = document.getElementById("image-quiz-container");
