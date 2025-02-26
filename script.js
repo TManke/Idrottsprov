@@ -40,11 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
     let currentQuestionIndex = 0;
     const quizContainer = document.getElementById("quiz-container");
-    const nextButton = document.createElement("button");
-    nextButton.textContent = "Nästa fråga";
-    nextButton.style.display = "none";
-    nextButton.onclick = showNextQuestion;
-    quizContainer.appendChild(nextButton);
 
     function showQuestion(index) {
         quizContainer.innerHTML = "";
@@ -62,19 +57,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         
         quizContainer.appendChild(questionEl);
-        quizContainer.appendChild(nextButton);
-        nextButton.style.display = "none";
     }
 
     function checkAnswer(button, correctAnswer) {
-        document.querySelectorAll("#quiz-container button").forEach(btn => btn.disabled = true);
         if (button.textContent === correctAnswer) {
             button.style.backgroundColor = "lightgreen";
+            setTimeout(showNextQuestion, 1000);
         } else {
             button.style.backgroundColor = "lightcoral";
+            document.querySelectorAll("#quiz-container button").forEach(btn => btn.disabled = true);
+            setTimeout(() => showQuestion(currentQuestionIndex), 1000);
         }
-        nextButton.style.display = "block";
-        nextButton.disabled = false; // Se till att knappen kan klickas
     }
 
     function showNextQuestion() {
